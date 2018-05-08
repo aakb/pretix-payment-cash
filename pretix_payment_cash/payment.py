@@ -51,7 +51,6 @@ class Cash(BasePaymentProvider):
 
         try:
             mark_order_paid(order, Cash.identifier, send_mail=False, info=json.dumps(info), user=request.user)
-            raise Exception(__name__ + ' TEST')
         except Exception as e:
             raise PaymentException(_('Cash payment error: {}').format(e))
 
