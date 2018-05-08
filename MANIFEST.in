@@ -1,0 +1,3 @@
+recursive-include pretix_payment_cash/static *
+recursive-include pretix_payment_cash/templates *
+recursive-include pretix_payment_cash/locale *
