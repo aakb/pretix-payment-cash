@@ -14,6 +14,14 @@ class Cash(BasePaymentProvider):
     identifier = 'cash'
     verbose_name = _('Cash')
 
+    def settings_content_render(self, request):
+        template = get_template('pretix_payment_cash/settings_content.html')
+        ctx = {
+            'request': request,
+            'settings': self.settings
+        }
+        return template.render(ctx)
+
     def is_allowed(self, request):
         user = request.user
 
